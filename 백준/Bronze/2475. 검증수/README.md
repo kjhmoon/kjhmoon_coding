@@ -28,3 +28,40 @@
 
  <p>첫째 줄에 검증수를 출력한다.</p>
 
+ ### 소스(개선전 소스)
+```
+#include <iostream>
+using namespace std;
+
+int main() {												 
+	int f;																	//검증수
+	int sum;																
+	int a, b, c, d, e;
+	cin >> a >> b >> c >> d >> e;								//자리수 입력받기
+	f = (a * a) + (b * b) + (c * c) + (d * d) + (e * e);		//검증수 구하기
+	sum = f %10;			
+
+	cout << sum;														//검증수 출력
+	return 0;
+}
+```
+### 소스(개선후 소스)
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int f, d,answer = 0;
+	for (int i = 0; i < 5; i++) {
+		cin >> f;
+		answer += f * f;
+		d = answer % 10;
+	}
+	cout << d;
+	return 0;
+}
+```
+### 후기
+f는 입력받는 숫자 즉 제곱하는 숫자이며 answer 변수에 제곱한f를 모두 더한다. 
+그 후 answer를 10으로 나눈 나머지를 d에 저장 하여 d를 출력한다. 각 변수를 많이 사용하는게 아니라 최소한의 변수를 사용하여 입력 받을때도 for문을 이용해서 받는 다는 점이 효율적인 코딩이므로 다음에 여러개의 변수 입력을 받을때는 for문을 이용하도록 하자. 
+
