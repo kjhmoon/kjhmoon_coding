@@ -28,3 +28,51 @@
 
  <p>각 테스트 케이스마다 A+B를 출력한다.</p>
 
+### 소스(개선전 소스)
+
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b=0;
+	int t;
+	int ary[10000];
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		cin >> a;
+		cin >> b;
+		ary[i] = a + b;
+	}
+	for (int i = 0; i < t; i++) {
+		cout << ary[i]<<"\n";
+	}
+	return 0;
+}
+```
+### 소스(개선후 소스)
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+	int a, b;
+	int t;
+	cin >> t;
+	for (int i = 0; i < t; i++) {
+		cin >> a >> b;
+		cout << a + b<<"\n";
+	}
+	return 0;
+}
+```
+### 후기 
+좀 장황하게 코딩을 한거 같아서 피드백을 하기 위해 작성하였다. 단순히 t개의 짝지어진 두 수를 더해서 출력만 하기 때문에 배열을 사용하지 않고 for문으로 a,b를 반복적으로 받아 바로 출력하는 것이다. 그러면 for문을 사용해서 배열을 출력할 필요가 없어지기 때문에 간결해진다. 또한 내가 몰랐던 점은 cin으로 두 수를 받을때는 
+```
+cin >> a,b;
+```
+가 아니라 
+```
+cin >> a >> b;
+```
+이런식으로 받는것이다. 
