@@ -4,9 +4,7 @@ using namespace std;
 int main() {
 	int H;
 	int M;
-
 	cin >> H >> M;
-
 	if (M < 45) {
 		H--;
 		M = 60 - (45 - M);
