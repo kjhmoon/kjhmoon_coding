@@ -24,5 +24,38 @@
 
 ### 출력 
 
- <p>첫째 줄에 입력으로 주어진 단어의 길이를 출력한다.</p>
+ <p>첫째 줄에 입력으로 주어진 단어의 길이를 출력한다.</p> 
 
+### 소스
+
+```
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string A;
+	cin >> A;
+	cout << A.length();
+
+	return 0;
+}
+```
+
+### 후기 
+length함수와 size함수는 동일한 구현을 가진다. 
+> size(): 컨테이너의 크기를 구하는 느낌으로 사용할 때
+length(): 문자열의 길이를 표현할 때 직관적으로 사용
+
+그럼 length 함수와 strlen함수의 차이는
+
+#### ✅ 주요 차이점:
+
+> 문자열 타입:
+strlen은 C 스타일 문자열 (char*)에 사용(c언어)
+length는 C++ std::string 객체에 사용(c++언어)
+
+
+> 널 종료 문자:
+strlen은 문자열 끝에 있는 '\0'을 기준으로 길이를 계산
+length는 내부적으로 문자열의 길이를 저장하므로 종료 문자를 신경 쓸 필요 없음
