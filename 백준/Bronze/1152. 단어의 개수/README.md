@@ -26,3 +26,42 @@
 
  <p>첫째 줄에 단어의 개수를 출력한다.</p>
 
+### 소스
+```
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int main() {
+	string A;
+	int count = 0;
+
+	getline(cin, A);
+
+	istringstream ss(A);
+	string word;
+
+	while (ss >> word) {
+		count++;
+	}
+	cout << count;
+	return 0;
+}
+
+```
+### 후기
+이번에 배운 기능은 바로 sstream사용법이다. 
+
+> istringstream: 입력 문자열을 읽기 위한 스트림 클래스(데이터 읽을때)
+ostringstream: 출력 문자열을 쓰기 위한 스트림 클래스(데이터 출력할때)
+stringstream: 입력 및 출력 문자열을 읽고 쓰기 위한 스트림 클래스(포함한 기능)
+
+### ✅ istringstream:
+
+> C++의 입력 스트림(istream)을 문자열(string)에서 읽을 수 있도록 해주는 클래스
+쉽게 말해서 문자열을 "공백을 기준으로" 나눠서 처리할 수 있도록 해줌
+cin이 키보드에서 입력을 받듯이, istringstream은 문자열 A에서 데이터를 가져옴
+
+string과 count를 만들고 getline(cin,A)로 문장을 모두 string A에 저장 후
+istringsteam ss(string) 으로 띄어쓰기 마다 단어를 분리, 이후 string word선언후 분리된 ss가 word에 단어 하나씩 저장(while문) 단어마다 저장하면서 count를 세어 단어수 측정 이후 cout << count실행
