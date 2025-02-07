@@ -26,3 +26,20 @@
 
  <p>입력받은 그대로 출력한다.</p>
 
+### 소스
+```
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	string A;
+	while (getline(cin, A)) cout << A << "\n";
+	return 0;
+}
+
+```
+### 후기 
+stirng과 char 문자열과 getline함수의 대해 헷갈리니 짚고 넘어가보자
+
+std::cin은 공백(스페이스)을 만나면 입력을 중단하지만, std::getline()은 엔터(개행 문자)를 만날 때까지 입력을 받습니다.
