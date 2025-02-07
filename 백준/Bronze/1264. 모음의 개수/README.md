@@ -28,3 +28,42 @@
 
  <p>각 줄마다 모음의 개수를 세서 출력한다.</p>
 
+### 소스
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    string str;
+    char arr[] = { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
+    int cnt;
+    while (getline(cin, str)) {
+        if (str == "#")
+            break;
+        cnt = 0;
+        for (int i = 0; i < str.length(); i++) {
+            for (char ch : arr) {
+                if (str[i] == ch)
+                    cnt++;
+            }
+        }
+        cout << cnt << '\n';
+    }
+    return 0;
+}
+```
+### 후기
+오늘 이 코드에서 새롭게 안 기능들이 너무 많기 때문에 정리해보려고한다. 
+
+-getline(cin,문자열): 말대로 문자열을 그대로 받는다는 의미를 가지고 있다. 나는 배열을 돌려서 배열에 저장해서 비교하려고 했지만 그게 아니라 getline을 사용해 문자열로 넣어버리는것이다.
+
+-문자열.length() 문자열수만큼을 돌릴수 있게 만들어준다. 동적으로 반복문 설정이 가능하기 때문에 유용하다. 
+
+-string str로 넣었더라도 str[0]로 검색 하면 첫 글자를 검색할 수 있다.
+
+-char (변수 : 배열) 사용하면 배열 하나를 변수로 옮겨와서 비교가 가능하게 만들어주는 기능이다. 
+
+
+
+
