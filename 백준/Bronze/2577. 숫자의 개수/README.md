@@ -28,3 +28,58 @@
 
  <p>첫째 줄에는 A × B × C의 결과에 0 이 몇 번 쓰였는지 출력한다. 마찬가지로 둘째 줄부터 열 번째 줄까지 A × B × C의 결과에 1부터 9까지의 숫자가 각각 몇 번 쓰였는지 차례로 한 줄에 하나씩 출력한다.</p>
 
+### 소스
+```
+#include <iostream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int main() {
+	int A, B, C;				// A,B,C int형 선언 
+	int mul;					// 3개의 정수를 곱할 mul변수
+	string act;					// mul변수를 string act으로 변환
+	int correct[10] = { };		// string act에서 count할 배열
+	stringstream ss;			// stringstream ss 선언 
+	cin >> A >> B >> C;			// A,B,C 입력받기
+	mul = A * B * C;			// mul 구하기
+	ss << mul;			        // 정수형 mul을 문자열 스트림 ss에 집어넣기
+	ss >> act;					// 문자열 스트림 ss를 string act에 집어넣기
+	for (int i = 0; i < act.length(); i++) {   
+		if (act[i] == '0') {
+			correct[0]++;
+		}
+		if (act[i] == '1') {
+			correct[1]++;
+		}
+		if (act[i] == '2') {
+			correct[2]++;
+		}
+		if (act[i] == '3') {
+			correct[3]++;
+		}
+		if (act[i] == '4') {
+			correct[4]++;
+		}
+		if (act[i] == '5') {
+			correct[5]++;
+		}
+		if (act[i] == '6') {
+			correct[6]++;
+		}
+		if (act[i] == '7') {
+			correct[7]++;
+		}
+		if (act[i] == '8') {
+			correct[8]++;
+		}
+		if (act[i] == '9') {
+			correct[9]++;
+		}
+	}
+	for (int j = 0; j < 10; j++) {
+		cout << correct[j] << "\n";
+	}
+	return 0;
+}
+```
