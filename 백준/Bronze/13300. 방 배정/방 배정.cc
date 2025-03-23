@@ -33,7 +33,10 @@ int main() {
         if (man[j] <= k && women[j] > 0) {
             count++;
         }
-        else {
+        else if(man[j] % k == 0){
+            count += (man[j] / k);
+        }
+        else if (man[j] % k != 0) {
             count += (man[j] / k) + 1;
         }
     }
@@ -44,7 +47,10 @@ int main() {
         if (women[j] <= k && women[j] > 0) {
             count++;
         }
-        else {
+        else if (women[j] % k == 0) {
+            count += (women[j] / k);
+        }
+        else if (women[j] % k != 0) {
             count += (women[j] / k) + 1;
         }
     }
